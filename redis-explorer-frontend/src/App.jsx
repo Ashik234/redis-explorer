@@ -2,8 +2,8 @@ import UserManager from './UserManager';
 
 function App() {
   return (
-    <div>
-      <h1>Redis Explorer Frontend</h1>
+    <div className="flex justify-center items-center h-screen">
+      <h1>Redis Explorer</h1>
       <UserManager />
     </div>
   );
