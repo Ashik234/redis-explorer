@@ -63,15 +63,15 @@ router.post("/", async (req, res) => {
   }
 });
 
-// // Flush Redis cache
-// router.post("/flush-cache", async (req, res) => {
-//   try {
-//     await redisClient.flushAll();
-//     res.json({ message: "Redis cache flushed successfully" });
-//   } catch (error) {
-//     console.error('Error flushing Redis:', error);
-//     res.status(500).json({ error: 'Failed to flush Redis cache' });
-//   }
-// });
+// Flush Redis cache
+router.post("/flush-cache", async (req, res) => {
+  try {
+    await redisClient.flushAll();
+    res.json({ message: "Redis cache flushed successfully" });
+  } catch (error) {
+    console.error("Error flushing Redis:", error);
+    res.status(500).json({ error: "Failed to flush Redis cache" });
+  }
+});
 
 export default router;
